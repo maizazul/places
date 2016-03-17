@@ -1,3 +1,11 @@
 #show-details {
   display: none;
 }
+.listplace {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.listplace:hover {
+  text-decoration: underline;
+}
