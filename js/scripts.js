@@ -1,7 +1,7 @@
-function Location (place, location, landmark, time, fun, notes) {
+function Location (place, location, landmarks, time, fun, notes) {
   this.place = place;
   this.location = location;
-  this.landmark = landmark;
+  this.landmarks = landmarks;
   this.time = time;
   this.fun = fun;
   this.notes = notes;
@@ -24,7 +24,7 @@ $(document).ready(function()  {
     var inputFun = $("input#place-fun").val();
     var inputNotes = $("input#place-notes").val();
 
-    var newPlace = new Location(inputPlace, inputLocation);
+    var newPlace = new Location(inputPlace, inputLocation, inputLandmarks);
     // var newDetails = new Location(inputLocation, inputLandmarks, inputTime, inputFun, inputNotes);
     // inputPlace.push(newDetails);
 
@@ -37,7 +37,7 @@ $(document).ready(function()  {
       $("#show-details h2").text(newPlace.place);
       // $(".place").text(;
       $(".location").text(newPlace.location);
-    //   $(".landmarks").text(inputLandmarks);
+      $(".landmarks").text(newPlace.landmarks);
     //   $(".time").text(inputTime);
     //   $(".fun").text(inputFun);
     //   $(".notes").text(inputNotes);
