@@ -7,9 +7,9 @@ function Location (place, location, landmark, time, fun, notes) {
   this.notes = notes;
 }
 
-Location.prototype.fullDetails = function() {
-  return this.place + ", " + this.location + ", " + this.landmark + ", " + this.time + ", " + this.fun + ", " + this.notes;
-}
+// Location.prototype.fullDetails = function() {
+//   return this.place + ", " + this.location + ", " + this.landmark + ", " + this.time + ", " + this.fun + ", " + this.notes;
+// }
 
 
 
@@ -17,28 +17,31 @@ $(document).ready(function()  {
   $("form#new-location").submit(function(event)  {
     event.preventDefault();
 
-    var inputPlace = $(this).find("input#new-place").val();
-    var inputLocation = $(this).find("input#place-location").val();
-    var inputLandmarks = $(this).find("input#place-landmarks").val();
-    var inputTime = $(this).find("input#place-time").val();
-    var inputFun = $(this).find("input#place-fun").val();
-    var inputNotes = $(this).find("input#place-notes").val();
-    var newPlace = new Location(inputPlace);
-    var newDetails = new Location(inputLocation, inputLandmarks, inputTime, inputFun, inputNotes);
+    var inputPlace = $("input#new-place").val();
+    var inputLocation = $("input#place-location").val();
+    var inputLandmarks = $("input#place-landmarks").val();
+    var inputTime = $("input#place-time").val();
+    var inputFun = $("input#place-fun").val();
+    var inputNotes = $("input#place-notes").val();
+
+    var newPlace = new Location(inputPlace, inputLocation);
+    // var newDetails = new Location(inputLocation, inputLandmarks, inputTime, inputFun, inputNotes);
     // inputPlace.push(newDetails);
 
     $("ul#list").append("<li><span class='listplace'>" + newPlace.place + "</span></li");
-    $(".listplace").last().click(function() {
 
+    $("input#new-place").val("");
+
+    $(".listplace").last().click(function() {
       $("#show-details").show();
       $("#show-details h2").text(newPlace.place);
-      $(".place").text(inputPlace);
-      $(".location").text(inputLocation);
-      $(".landmarks").text(inputLandmarks);
-      $(".time").text(inputTime);
-      $(".fun").text(inputFun);
-      $(".notes").text(inputNotes);
-        console.log("click");
+      // $(".place").text(;
+      $(".location").text(newPlace.location);
+    //   $(".landmarks").text(inputLandmarks);
+    //   $(".time").text(inputTime);
+    //   $(".fun").text(inputFun);
+    //   $(".notes").text(inputNotes);
+    //     console.log("click");
 
       // $("ul#info").text("");
       //   $("ul#addresses").append("<li>" + fullDetails() + "</li>");
