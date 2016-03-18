@@ -24,7 +24,7 @@ $(document).ready(function()  {
     var inputFun = $("input#place-fun").val();
     var inputNotes = $("input#place-notes").val();
 
-    var newPlace = new Location(inputPlace, inputLocation, inputLandmarks);
+    var newPlace = new Location(inputPlace, inputLocation, inputLandmarks, inputTime, inputFun, inputNotes);
     // var newDetails = new Location(inputLocation, inputLandmarks, inputTime, inputFun, inputNotes);
     // inputPlace.push(newDetails);
 
@@ -38,9 +38,9 @@ $(document).ready(function()  {
       // $(".place").text(;
       $(".location").text(newPlace.location);
       $(".landmarks").text(newPlace.landmarks);
-    //   $(".time").text(inputTime);
-    //   $(".fun").text(inputFun);
-    //   $(".notes").text(inputNotes);
+      $(".time").text(newPlace.time);
+      $(".fun").text(newPlace.fun);
+      $(".notes").text(newPlace.notes);
     //     console.log("click");
 
       // $("ul#info").text("");
