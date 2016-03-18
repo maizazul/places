@@ -30,17 +30,16 @@ $(document).ready(function()  {
 
     $("ul#list").append("<li><span class='listplace'>" + newPlace.place + "</span></li");
 
-    $("input#new-place").val("");
-
     $(".listplace").last().click(function() {
       $("#show-details").show();
       $("#show-details h2").text(newPlace.place);
-      // $(".place").text(;
       $(".location").text(newPlace.location);
       $(".landmarks").text(newPlace.landmarks);
       $(".time").text(newPlace.time);
       $(".fun").text(newPlace.fun);
       $(".notes").text(newPlace.notes);
+
+
     //     console.log("click");
 
       // $("ul#info").text("");
@@ -48,5 +47,14 @@ $(document).ready(function()  {
 
 
     });
+
+    $("input#new-place").val("");
+    $("input#place-location").val("");
+    $("input#place-landmarks").val("");
+    $("input#place-time").val("");
+    $("input#place-fun").val("");
+    $("input#place-notes").val("");
+
+
   });
 });
